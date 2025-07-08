@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Compile to ES5 for broader compatibility
+    "lib": ["dom", "dom.iterable", "esnext"], // Libraries available in the environment
+    "allowJs": true, // Allow JavaScript files in your project
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "esModuleInterop": true, // Enable compatibility for default imports
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "strict": true, // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext", // Use ES Modules for better tree-shaking
+    "moduleResolution": "node", // Resolve modules using Node.js resolution strategy
+    "resolveJsonModule": true,
+    "isolatedModules": true, // Warns if files cannot be transpiled separately (important for Babel)
+    "jsx": "react-jsx", // Enable JSX support
+    "declaration": true, // Generate .d.ts files for type definitions (ESSENTIAL for packages)
+    "outDir": "./dist", // Output directory for compiled files (handled by Rollup usually, but good for type checking)
+    "rootDir": "./src" // Root directory of your source files
+  },
+  "include": ["src"], // Include files in the 'src' directory
+  "exclude": ["node_modules", "dist"] // Exclude these directories
+}
