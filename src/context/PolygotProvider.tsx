@@ -42,7 +42,7 @@ export const PolygotProvider: React.FC<PolygotProviderProps> = ({
   const [inflightRequests, setInflightRequests] = useState<Set<string>>(new Set()); // <-- New state
 
   const pendingTranslations = useRef<Set<string>>(new Set());
-  const debounceTimer = useRef<NodeJS.Timeout | null>(null);
+  const debounceTimer = useRef<any>(null);
 
   useEffect(() => {
     setTranslations({});
@@ -59,7 +59,6 @@ export const PolygotProvider: React.FC<PolygotProviderProps> = ({
     const stringsToTranslate = Array.from(pendingTranslations.current);
     pendingTranslations.current.clear();
 
-    // <-- Mark these strings as in-flight
     setInflightRequests((prev) => new Set([...(prev as any), ...stringsToTranslate]));
 
     try {
@@ -84,7 +83,6 @@ export const PolygotProvider: React.FC<PolygotProviderProps> = ({
       }
     } finally {
       setIsLoading(false);
-      // <-- Remove these strings from in-flight requests once done
       setInflightRequests((prev) => {
         const next = new Set(prev);
         stringsToTranslate.forEach((key) => next.delete(key));
@@ -133,4 +131,3 @@ export const PolygotProvider: React.FC<PolygotProviderProps> = ({
     </PolygotContext.Provider>
   );
 };
-

@@ -9,11 +9,12 @@
   "files": [
     "dist"
   ],
+  "bin": {
+    "polygot": "./dist/commands/seo.js"
+  },
   "scripts": {
     "clean": "rm -rf dist",
-    "build:js": "rollup -c",
-    "build:types": "tsc --emitDeclarationOnly --outDir dist",
-    "build": "npm run build:js && npm run build:types",
+    "build": "tsc",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build && npm run typecheck",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,14 +24,30 @@
     "typescript",
     "internationalization",
     "i18n",
-    "polyglot"
+    "polyglot",
+    "react-native"
   ],
   "author": "Polygot",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-native": ">=0.60.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
   "dependencies": {
+    "@babel/parser": "^7.28.0",
+    "@babel/traverse": "^7.28.0",
+    "@babel/types": "^7.28.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "glob": "^11.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.27.7",
@@ -39,11 +56,13 @@
     "@babel/preset-typescript": "^7.27.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/babel__traverse": "^7.20.7",
+    "@types/glob": "^8.1.0",
+    "@types/node": "^24.0.12",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "rollup": "^4.18.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^5.8.3"
   }
 }
