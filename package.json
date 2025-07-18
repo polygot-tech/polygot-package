@@ -1,6 +1,6 @@
 {
   "name": "polygot",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A React component package for internationalization with TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
