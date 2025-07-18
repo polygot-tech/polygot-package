@@ -12,7 +12,7 @@ import { isValidLanguageCode, LanguageCodes } from '../types/Language';
 interface PolygotProviderProps {
   children: ReactNode;
   sourceLanguage?: LanguageCodes;
-  apiKey: string;
+  appId: string;
 }
 
 export interface PolygotContextType {
@@ -29,7 +29,7 @@ export const PolygotContext = createContext<PolygotContextType | null>(null);
 export const PolygotProvider: React.FC<PolygotProviderProps> = ({
   children,
   sourceLanguage = 'en',
-  apiKey,
+  appId,
 }) => {
   if (!isValidLanguageCode(sourceLanguage)) {
     throw new Error(`Invalid sourceLanguage: "${sourceLanguage}"`);
@@ -67,7 +67,7 @@ export const PolygotProvider: React.FC<PolygotProviderProps> = ({
         stringsToTranslate,
         sourceLanguage,
         targetLanguage,
-        apiKey
+        appId
       );
 
       const newTranslationsMap = stringsToTranslate.reduce((acc, original, index) => {
@@ -91,7 +91,7 @@ export const PolygotProvider: React.FC<PolygotProviderProps> = ({
         return next;
       });
     }
-  }, [apiKey, sourceLanguage, targetLanguage]);
+  }, [appId, sourceLanguage, targetLanguage]);
 
   const t = useCallback((text: string): string => {
     if (!text || targetLanguage === sourceLanguage) return text;

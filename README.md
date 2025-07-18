@@ -27,7 +27,7 @@ function App() {
   return (
     <PolygotProvider
       sourceLanguage="en"
-      apiKey="your-api-key"
+      appId="your-app-id"
     >
       <YourApp />
     </PolygotProvider>
@@ -58,7 +58,7 @@ The main context provider that manages translation state for your application.
 |------------------|------------|----------------|--------------------------------------------------------------|
 | `children`       | `ReactNode`| —              | Your application’s child components.                         |
 | `sourceLanguage` | `string`   | `'en'`         | The original language of your content.                       |
-| `apiKey`         | `string`   | —              | **Required**. Your API key for the translation service.      |
+| `appId`         | `string`   | —              | **Required**. Your app_id for the translation service.      |
 | `loadingComponent` | `ReactNode` | `"Loading..."` | A component to display while translations are in progress.   |
 | `errorComponent` | `Function` | `Error handler`| A component to render when a translation error occurs.       |
 
@@ -86,7 +86,7 @@ function Root() {
   return (
     <PolygotProvider
       sourceLanguage="en"
-      apiKey={process.env.REACT_APP_TRANSLATION_API_KEY}
+      appId={process.env.REACT_APP_TRANSLATION_API_KEY}
       loadingComponent={<CustomLoader />}
       errorComponent={CustomError}
     >

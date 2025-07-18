@@ -4,7 +4,7 @@ export const fetchTranslations = async (
   stringsToTranslate: object,
   sourceLang: string,
   targetLang: string,
-  apiKey: string
+  appId: string
 ) => {
   const cacheKey = `${sourceLang}-${targetLang}:${JSON.stringify(
     stringsToTranslate
@@ -19,7 +19,7 @@ export const fetchTranslations = async (
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
+        "App-Id": appId,
       },
       body: JSON.stringify({
         to: targetLang,
