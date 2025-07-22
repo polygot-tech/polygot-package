@@ -14,7 +14,7 @@ const traverse = (_traverse as any).default;
 // --- CONFIGURATION ---
 const LOCALES_DIR = path.join(process.cwd(), 'locales');
 const SOURCE_LANG = 'en'; // The source language of the text in your components
-const TRANSLATE_API_URL = 'http://localhost:3000/api/v1/translate'; // The URL for your local Express translation endpoint
+const TRANSLATE_API_URL = 'https://api.polygot.tech/api/v1/translate'; // The URL for your local Express translation endpoint
 
 /**
  * A simple delay function to avoid hitting API rate limits.
