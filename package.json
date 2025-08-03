@@ -1,6 +1,6 @@
 {
   "name": "polygot-one",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "A React component package for internationalization with TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -9,8 +9,16 @@
   "files": [
     "dist"
   ],
+  "exports": {
+  ".": {
+    "import": "dist/index.esm.js",
+    "require": "dist/index.js",
+    "types": "dist/index.d.ts"
+  }
+},
+
   "bin": {
-    "polygot": "./dist/commands/seo.js"
+    "polygotone": "./dist/cli/commands/index.js"
   },
   "scripts": {
     "clean": "rm -rf dist",
@@ -47,6 +55,7 @@
     "@babel/traverse": "^7.28.0",
     "@babel/types": "^7.28.0",
     "@rollup/plugin-terser": "^0.4.4",
+    "commander": "^14.0.0",
     "glob": "^11.0.3"
   },
   "devDependencies": {
