@@ -74,7 +74,7 @@ export const fetchTranslations = async (
 
   try {
     const response = await fetch(
-      "https://api.polygot.tech/api/v1/translate",
+      "http://localhost:3000/api/v1/translate",
       {
         method: "POST",
         headers: {

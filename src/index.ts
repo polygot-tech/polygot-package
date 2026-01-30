@@ -7,3 +7,4 @@ export { PolygotProvider } from "./context/PolygotProvider";
 export { usePolygot } from "./hooks/usePolygot";
 
 export type { LanguageCodes } from "./types/Language";
+

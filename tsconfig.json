@@ -18,6 +18,6 @@
     "outDir": "./dist", // Output directory for compiled files (handled by Rollup usually, but good for type checking)
     "rootDir": "./src" // Root directory of your source files
   },
-  "include": ["src/**/*"], // Include files in the 'src' directory
+  "include": ["src/**/*", "src/cli"], // Include files in the 'src' directory
   "exclude": ["node_modules", "dist"] // Exclude these directories
 }
